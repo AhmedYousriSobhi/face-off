@@ -15,6 +15,7 @@ if __name__ == '__main__':
     if not os.path.exists('data/'):
         os.makedirs('data/train')
         os.makedirs('data/test')
+        os.makedirs('data/label')
 
     # Create reqiored directories for models
     if not os.path.exists('models'):
