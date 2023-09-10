@@ -18,10 +18,9 @@ if __name__ == '__main__':
         os.makedirs('data/label')
 
     # Create reqiored directories for models
-    if not os.path.exists('models'):
-        os.makedirs('models/checkpoints')
-        os.makedirs('models/models')
-    
+    if not os.path.exists('face_match'):
+        os.makedirs('face_match/')
+        
     # Create required directories for Documentation
     if not os.path.exists('docs/'):
         os.makedirs('docs/')

@@ -5,6 +5,9 @@ import os, numpy as np, pandas as pd
 import cv2
 from deepface import DeepFace
 
+# To run on CPU
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 # Functions Definitions
 def custom_draw_on(img, faces, label_lst):
     """
@@ -113,7 +116,7 @@ def multi_image_recognition(
             
         detected_faces = DeepFace.extract_faces(
             img_path=img_path+img_name,
-            detector_backend=detector_backend
+            detector_backend=detector_backend,
         )
 
         found_faces = DeepFace.find(img_path=img_path+img_name,

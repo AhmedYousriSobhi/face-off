@@ -15,6 +15,10 @@
   - [Dataset Folder Structure](#dataset-folder-structure)
   - [Dataset Download](#dataset-download)
   - [Inference](#inference)
+    - [Setting-up Test Images Data](#setting-up-test-images-data)
+    - [Notebook Inference](#notebook-inference)
+    - [Script](#script)
+  - [Note](#note)
 
 ## Objective
 An ID face match is a biometric authentication process that involves comparing a captured facial image with a stored reference image to determine if they represent the same individual. The primary goal of this process is to verify the identity of a person by analyzing key facial features and patterns.
@@ -74,7 +78,7 @@ The folder structure for image recognition tasks typically consists of the follo
 A root directory, which contains the following subdirectories:
 - train directory: This directory contains the training images and their labels.
 - test directory: This directory contains the test images.
-- labels directory: This directory contains the labels for the images.
+- labels directory: This directory contains the users labeled images and the label csv file.
 
 The labels for the images are typically stored in a CSV file. The CSV file should have two columns:
 - image_name (string): The name of the image.
@@ -84,3 +88,26 @@ The labels for the images are typically stored in a CSV file. The CSV file shoul
 Current used dataset is from Kaggle: [Celebrity Face Image Dataset](https://www.kaggle.com/datasets/vishesh1412/celebrity-face-image-dataset?select=Celebrity+Faces+Dataset)
 
 ## Inference
+To inference the face recognition script, follow the following steps:
+
+### Setting-up Test Images Data
+Place the data:
+- Test images in the following location: project_directory/data/test/
+- Label Data:
+  - Images: located at project_directory/data/label/***.jpg
+  - Label csv file: located at project_directory/data/label/label.csv
+
+### Notebook Inference
+You can explore the cell interactive mode throught the notebook at: nb_worksapce/id_face_match.ipynb
+
+### Script
+The face recognition sript is located at: face_match/face_match.py
+
+```
+python ./face_match/face_match.py --mode single --img_dir 'data/test/' --img_name '001_5992faf7.jpg' --label_path 'data/label/' 
+```
+
+## Note
+In case of adding new label data users, you have to remove the representations pickle file, so the model regenerate a new vector embedding for the label images.
+
+The file is located at: data/label/representations_arcface.pkl
