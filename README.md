@@ -2,7 +2,7 @@
 
 | Info | Description |
 |:-----:|:----------:|
-| Project Objective |Customer Segmentation|
+| Project Objective |ID Face Match|
 | Assignee | Ahmed Yousri Sobhi |
 | Assignee's email | [ahmedyousrisobhi@gmail.com](ahmedyousrisobhi@gmail.com) |
 | Department | Data Science |
@@ -64,6 +64,9 @@ python ./src/env/setup_env.py
 |   ├── label
 ├── docs                   # Documentation files which includes analysis report
 |   ├── face_match         # Scripts for face recognition
+|   ├── face_match_optimized         # Scripts for face recognition
+|   ├── nb_workspace         # Scripts for face recognition
+|   ├── nb_workspace_optimized         # Scripts for face recognition
 ├── report                 # Reports files
 |   ├── plots              # Figures files
 |   ├── reports            # Reports HTML files
@@ -103,8 +106,14 @@ You can explore the cell interactive mode throught the notebook at: nb_worksapce
 ### Script
 The face recognition sript is located at: face_match/face_match.py
 
+In case of normal version which uses DeepFace Package
 ```
 python ./face_match/face_match.py --mode single --img_dir 'data/test/' --img_name '001_5992faf7.jpg' --label_path 'data/label/' 
+```
+
+In case of Optimised version which uses modified DeepFace Package
+```
+python ./face_match_optimized/face_recognition.py --mode video --img_dir data/test --img_video_name <YOUR Video> --label_path data/label
 ```
 
 ## Note
