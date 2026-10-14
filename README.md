@@ -122,3 +122,11 @@ python ./face_match_optimized/face_recognition.py --mode video --img_dir data/te
 In case of adding new label data users, you have to remove the representations pickle file, so the model regenerate a new vector embedding for the label images.
 
 The file is located at: data/label/representations_arcface.pkl
+
+## License
+
+The code and notebooks in this repository are licensed under the [MIT License](LICENSE). The exceptions below keep their own terms:
+
+- **`deepface_modified/`** (in `src/` and `nb_workspace_optimized/`) is adapted from [DeepFace](https://github.com/serengil/deepface) by Sefik Ilkin Serengil, MIT License. Its notice is in the `LICENSE` file inside each folder.
+- **The face images in `data/`** are not covered by this license and must not be reused.
+- **Pretrained model weights** downloaded at run time keep the licenses of their publishers.
